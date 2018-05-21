@@ -34,7 +34,15 @@
 # substituindo apenas o comando print(questão...) existente.
 ##
 def main():
-    print("questao 4")
+    from operator import itemgetter
+    lista = []
+    while True:
+        cadastro = input('Digite o nome, idade e pontuação dos usuarios: ')
+        if cadastro == '':
+            break
+        cadastro = cadastro.split(',')
+        lista.append((tuple(cadastro)))
+    print(sorted(tuple(lista), key=itemgetter(0,1,2)))
 
 
     
